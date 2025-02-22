@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>example page</title>
+		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<fieldset>
+			<legend>Add a cookie</legend>
+
+			<label for="newName">Name:</label>
+			<input id="newName" type="text" /><br />
+
+			<label for="newValue">Value:</label>
+			<input id="newValue" type="text" /><br />
+
+			<input type="checkbox" id="useDocumentCookie" name="useDocumentCookie" />
+			<label for="useDocumentCookie">Use document.cookie</label><br />
+
+			<button id="add">Add</button>
+		</fieldset>
+
+		<fieldset>
+			<legend>Delete a cookie</legend>
+
+			<label for="cookieToDelete">Name:</label>
+			<input id="cookieToDelete" type="text" /><br />
+
+			<button id="delete">Delete</button>
+		</fieldset>
+
+		<fieldset>
+			<legend>Delete all cookies</legend>
+
+			<button id="deleteAll">Delete all</button>
+		</fieldset>
+
+		<fieldset>
+			<legend>List all cookies</legend>
+
+			<button id="list">List</button>
+		</fieldset>
+	</body>
+</html>
