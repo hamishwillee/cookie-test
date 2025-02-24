@@ -1,7 +1,10 @@
 const logElement = document.querySelector("#log");
 
-function log(text) {
-  logElement.innerText = `${logElement.innerText}${text}\n`;
+function log(text, append = true) {
+  logElement.innerText = append
+    ? `${logElement.innerText}${text}\n`
+    : `${text}\n`;
+
   logElement.scrollTop = logElement.scrollHeight;
 }
 
@@ -52,10 +55,11 @@ deleteAllCookies.addEventListener("click", async () => {
 const list = document.querySelector("#list");
 list.addEventListener("click", async () => {
   const cookies = await cookieStore.getAll();
+
+  const cookieNames = cookies.map((cookie) => cookie.name).join(" ");
+  console.log(cookieNames);
+  log(`Cookies: ${cookieNames}`, false);
   for (const cookie of cookies) {
     logCookie(cookie.name, cookie);
   }
-  const cookieNames = cookies.map((cookie) => cookie.name).join(" ");
-  console.log(cookieNames);
-  log(`Cookies: ${cookieNames}`);
 });
